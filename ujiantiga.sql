@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2021 at 11:27 AM
+-- Generation Time: Mar 26, 2021 at 11:40 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -25,7 +25,7 @@ DELIMITER $$
 --
 -- Procedures
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GetDepartment` (INOUT `depar` VARCHAR(20), INOUT `jumlah_pegawai` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetDepartment` (IN `depar` VARCHAR(20))  BEGIN
 
     SELECT department, COUNT(worker_id) AS jumlah_pegawai
  	FROM tbl_worker
